@@ -2,29 +2,26 @@
 
 $("article-btn").on("click", function() {
 
-    // Generate Headline, Summary, URL, and Photo
+    for (var i = 0; i < data.length; i++) {
+
+        $("#articles").append("<p>" + data[i].title + "<br />" + data[i].link + "<button id = 'add-comment'> Add Comment </button> <button id = 'delete-article'> </button>");
+    }
 
 
-    $.ajax({
-        method: "GET",
-        url: "/articles/"
-    })
-
-        .then(function(data) {
-            console.log(data);
-
-            // Show the Headlines
-
-            // Show the Summary
-
-            // Show the URL
-
-            // Show the Photo
-
-
-            // Add Comments Input (Modal Box)
-            // Add Delete Button
-
-        })
 
 })
+
+
+
+
+$.ajax({
+    method: "GET",
+    url: "/articles/"
+})
+
+    .then(function(data) {
+        console.log(data);
+        // Add Comments Input (Modal Box)
+        // Add Delete Button
+
+    })
